@@ -65,7 +65,7 @@ function draw() {
     let popl = data[4];
     let x = mercX(lng) - cx;
     let y = mercY(lat) - cy;
-    let area = co2*30000/popl;
+    let area = co2*100000/popl;
     //console.log(area);
     let d = sqrt(area/PI);
     noStroke();
