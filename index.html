@@ -5,39 +5,44 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.sound.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.min.js" type="text/javascript"></script>
+      <script src="https://unpkg.com/mappa-mundi/dist/mappa.min.js" type="text/javascript"></script>
+      <script src="mappa.min.js"></script>
   </head>
 
   <body>
     <h1 id="title">Global CO2 Emissions Per Capita Map</h1>
 
     <div class="firstRow">
-     <p id="para">Show nations with emission amount per capita larger than</p>
+      <p id="para">Show nations with emission amount larger than</p>
     </div>
 
     <div class="firstRow">
-     <input id="valueInput" placeholder="0 to 559 (kt)"></input>
-    </div>
+      <input id="valueInput" placeholder="0 to 3541 (kt)"></input>
+  </div>
 
-    <div class="firstRow" id="enterButton">
-     <p>ENTER</p>
-    </div>
+      <div class="firstRow" id="enterButton">
+        <p>ENTER</p>
+      </div>
 
     <!-- <p id="warning"></p> -->
 
     <script>
+      let emiinp;
       let HTMLbutton = document.getElementById("enterButton");
       let HTMLinput = document.getElementById("valueInput");
+      let HTMLpara = document.getElementById("para");
       // let warningText = document.getElementById("warning");
-      let inpValue = 559;
+      // HTMLinput.parent(HTMLpara);
+      let inpValue = 10357;
 
       HTMLbutton.addEventListener("click", function(){
         let currentTextInInputBox = HTMLinput.value;
-        console.log(">>", currentTextInInputBox);
-        console.log(currentTextInInputBox.length);
+        // console.log(">>", currentTextInInputBox);
+        // console.log(currentTextInInputBox.length);
         inpValue = Number(currentTextInInputBox);
 
         if(currentTextInInputBox.length > 0 && inpValue >= 0 && inpValue <= 10357){
-          console.log(inpValue);
           emiinp = inpValue;
           // warningText.innerHTML = "Well done!";
         }else{
